@@ -19,9 +19,9 @@
       "obj/main.o",
       "src/main.cpp"
     ],
-    "directory": "/Users/sebasnadu/code/SebasNadu/42_cpp_module05/ex01",
-    "file": "/Users/sebasnadu/code/SebasNadu/42_cpp_module05/ex01/src/main.cpp",
-    "output": "/Users/sebasnadu/code/SebasNadu/42_cpp_module05/ex01/obj/main.o"
+    "directory": "/Users/sebasnadu/code/SebasNadu/42_cpp_module05/ex02",
+    "file": "/Users/sebasnadu/code/SebasNadu/42_cpp_module05/ex02/src/main.cpp",
+    "output": "/Users/sebasnadu/code/SebasNadu/42_cpp_module05/ex02/obj/main.o"
   },
   {
     "arguments": [
@@ -43,9 +43,9 @@
       "obj/Bureaucrat.o",
       "src/Bureaucrat.cpp"
     ],
-    "directory": "/Users/sebasnadu/code/SebasNadu/42_cpp_module05/ex01",
-    "file": "/Users/sebasnadu/code/SebasNadu/42_cpp_module05/ex01/src/Bureaucrat.cpp",
-    "output": "/Users/sebasnadu/code/SebasNadu/42_cpp_module05/ex01/obj/Bureaucrat.o"
+    "directory": "/Users/sebasnadu/code/SebasNadu/42_cpp_module05/ex02",
+    "file": "/Users/sebasnadu/code/SebasNadu/42_cpp_module05/ex02/src/Bureaucrat.cpp",
+    "output": "/Users/sebasnadu/code/SebasNadu/42_cpp_module05/ex02/obj/Bureaucrat.o"
   },
   {
     "arguments": [
@@ -64,11 +64,11 @@
       "-I",
       ".",
       "-o",
-      "obj/Form.o",
-      "src/Form.cpp"
+      "obj/AForm.o",
+      "src/AForm.cpp"
     ],
-    "directory": "/Users/sebasnadu/code/SebasNadu/42_cpp_module05/ex01",
-    "file": "/Users/sebasnadu/code/SebasNadu/42_cpp_module05/ex01/src/Form.cpp",
-    "output": "/Users/sebasnadu/code/SebasNadu/42_cpp_module05/ex01/obj/Form.o"
+    "directory": "/Users/sebasnadu/code/SebasNadu/42_cpp_module05/ex02",
+    "file": "/Users/sebasnadu/code/SebasNadu/42_cpp_module05/ex02/src/AForm.cpp",
+    "output": "/Users/sebasnadu/code/SebasNadu/42_cpp_module05/ex02/obj/AForm.o"
   }
 ]

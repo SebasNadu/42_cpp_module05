@@ -6,13 +6,13 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 16:06:31 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/06/26 16:06:33 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/06/26 16:43:54 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "Form.hpp"
+#include "AForm.hpp"
 #include <iostream>
 #include <string>
 
@@ -20,7 +20,7 @@
 #define RED "\033[31m"
 #define GREEN "\033[32m"
 
-class Form;
+class AForm;
 
 class Bureaucrat {
 public:
@@ -44,7 +44,7 @@ public:
   // Methods
   void incrementGrade(void);
   void decrementGrade(void);
-  void signForm(Form &form);
+  void signForm(AForm &form);
 
   class GradeTooHighException : public std::exception {
   public:

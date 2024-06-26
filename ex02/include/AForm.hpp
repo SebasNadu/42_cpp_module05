@@ -6,7 +6,7 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 09:01:38 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/06/26 16:36:23 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/06/26 20:33:55 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,24 +21,26 @@ class Bureaucrat;
 class AForm {
 public:
   // Constructors
-  Form(void);
-  Form(Form const &src);
-  Form(std::string const name);
-  Form(int sign_grade, int exec_grade);
-  Form(std::string const name, int sign_grade, int exec_grade);
-  Form(std::string const name, bool is_signed, int sign_grade, int exec_grade);
+  AForm(void);
+  AForm(AForm const &src);
+  AForm(std::string const name);
+  AForm(int sign_grade, int exec_grade);
+  AForm(std::string const name, int sign_grade, int exec_grade);
+  AForm(std::string const name, bool is_signed, int sign_grade, int exec_grade);
   // Deconstructor
-  ~Form(void);
+  ~AForm(void);
   // Overload Operators
-  Form &operator=(Form const &rhs);
+  AForm &operator=(AForm const &rhs);
 
   // Getters
   std::string const getName(void) const;
   bool getIsSigned(void) const;
-  int getSignGrade(void) const;
-  int getExecGrade(void) const;
+  size_t getSignGrade(void) const;
+  size_t getExecGrade(void) const;
+  std::string getTarget(void) const;
 
   void beSigned(Bureaucrat *signer);
+  virtual bool execute(Bureaucrat const &executor) const = 0;
 
   class GradeTooLowException : public std::exception {
   public:
@@ -50,11 +52,17 @@ public:
     virtual char const *what(void) const throw();
   };
 
+  class FormNotSignedException : public std::exception {
+  public:
+    virtual char const *what(void) const throw();
+  };
+
 private:
   std::string const _name;
   bool _is_signed;
   size_t const _sign_grade;
   size_t const _exec_grade;
+  std::string _target;
 };
 
-std::ostream &operator<<(std::ostream &out, Form &form);
+std::ostream &operator<<(std::ostream &out, AForm &form);

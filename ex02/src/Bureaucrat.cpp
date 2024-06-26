@@ -6,7 +6,7 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 21:18:04 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/06/26 15:37:01 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/06/26 16:47:49 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void Bureaucrat::decrementGrade(void) {
             << this->_grade << std::endl;
 }
 
-void Bureaucrat::signForm(Form &form) {
+void Bureaucrat::signForm(AForm &form) {
   try {
     form.beSigned(this);
   } catch (std::exception &e) {
