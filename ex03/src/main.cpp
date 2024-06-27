@@ -6,7 +6,7 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 21:11:23 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/06/27 17:21:11 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/06/27 17:24:54 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int main(void) {
   tic_tac(100000, 5);
   Intern intern;
   tic_tac(100000, 5);
-  AForm *formPresidential = intern.makeForm("presidential pardon", "my_boss");
+  AForm *formPresidential = intern.makeForm("presidential pardon", "myself");
   tic_tac(100000, 5);
   AForm *formShrubbery = intern.makeForm("shrubbery creation", "planting");
   tic_tac(100000, 5);

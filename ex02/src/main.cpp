@@ -6,7 +6,7 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 21:11:23 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/06/27 13:12:59 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/06/27 17:24:29 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int main(void) {
 
   std::cout << YELLOW << "\nForm creation test\n" << RESET;
   tic_tac(100000, 5);
-  PresidentialPardonForm form("Pardon_me");
+  PresidentialPardonForm form("myself");
   tic_tac(100000, 5);
   ShrubberyCreationForm form2("planting");
   tic_tac(100000, 5);
