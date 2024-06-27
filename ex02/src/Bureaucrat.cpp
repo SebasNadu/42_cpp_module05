@@ -6,12 +6,11 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 21:18:04 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/06/27 11:34:57 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/06/27 17:32:41 by johnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include <random>
 
 Bureaucrat::Bureaucrat(void) : _name("Anonymous"), _grade(150) {
   std::cout << "Bureaucrat " << this->_name
