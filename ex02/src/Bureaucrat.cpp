@@ -6,11 +6,12 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 21:18:04 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/06/26 16:47:49 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/06/27 11:34:57 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include <random>
 
 Bureaucrat::Bureaucrat(void) : _name("Anonymous"), _grade(150) {
   std::cout << "Bureaucrat " << this->_name
@@ -73,19 +74,31 @@ void Bureaucrat::setGrade(int grade) {
 }
 
 void Bureaucrat::incrementGrade(void) {
-  if (this->_grade == 1)
-    throw Bureaucrat::GradeTooHighException();
-  this->_grade--;
-  std::cout << "Bureaucrat " << this->_name << " grade incremented to "
-            << this->_grade << std::endl;
+  try {
+    if (this->_grade == 1)
+      throw Bureaucrat::GradeTooHighException();
+    this->_grade--;
+    std::cout << GREEN << "Bureaucrat " << this->_name
+              << " grade incremented to " << this->_grade << RESET << std::endl;
+  } catch (std::exception &e) {
+    std::cout << RED << "Bureaucrat " << this->_name
+              << " couldn't increment grade because: " << e.what() << RESET
+              << std::endl;
+  }
 }
 
 void Bureaucrat::decrementGrade(void) {
-  if (this->_grade == 150)
-    throw Bureaucrat::GradeTooLowException();
-  this->_grade++;
-  std::cout << "Bureaucrat " << this->_name << " grade decremented to "
-            << this->_grade << std::endl;
+  try {
+    if (this->_grade == 150)
+      throw Bureaucrat::GradeTooLowException();
+    this->_grade++;
+    std::cout << GREEN << "Bureaucrat " << this->_name
+              << " grade decremented to " << this->_grade << RESET << std::endl;
+  } catch (std::exception &e) {
+    std::cout << RED << "Bureaucrat " << this->_name
+              << " couldn't decrement grade because: " << e.what() << RESET
+              << std::endl;
+  }
 }
 
 void Bureaucrat::signForm(AForm &form) {
@@ -93,6 +106,17 @@ void Bureaucrat::signForm(AForm &form) {
     form.beSigned(this);
   } catch (std::exception &e) {
     std::cout << RED << this->_name << " couldn't sign " << form.getName()
+              << " because: " << e.what() << RESET << std::endl;
+  }
+}
+
+void Bureaucrat::executeForm(AForm const &form) {
+  try {
+    form.execute(*this);
+    std::cout << GREEN << this->_name << " executed " << form.getName() << RESET
+              << std::endl;
+  } catch (std::exception &e) {
+    std::cout << RED << this->_name << " couldn't execute " << form.getName()
               << " because: " << e.what() << RESET << std::endl;
   }
 }

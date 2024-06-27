@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/26 17:08:22 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/06/27 08:53:02 by sebasnadu        ###   ########.fr       */
+/*   Created: 2024/06/27 08:55:51 by sebasnadu         #+#    #+#             */
+/*   Updated: 2024/06/27 09:31:40 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,22 @@
 
 #include "AForm.hpp"
 
-class ShrubberyCreationForm : public AForm {
+class RobotomyRequestForm : public AForm {
 public:
-  ShrubberyCreationForm(void);
-  ShrubberyCreationForm(std::string const target);
-  ShrubberyCreationForm(ShrubberyCreationForm const &src);
-  ~ShrubberyCreationForm(void);
+  RobotomyRequestForm(void);
+  RobotomyRequestForm(std::string const target);
+  RobotomyRequestForm(RobotomyRequestForm const &src);
+  ~RobotomyRequestForm(void);
 
-  ShrubberyCreationForm &operator=(ShrubberyCreationForm const &rhs);
+  RobotomyRequestForm &operator=(RobotomyRequestForm const &rhs);
+
+  size_t getCount(void) const;
 
   bool execute(Bureaucrat const &executor) const;
 
 private:
-  void _createTree(void) const;
-  static std::string const _tree;
+  void _robotomize(void) const;
+  static size_t _count;
 };
 
-std::ostream &operator<<(std::ostream &out, ShrubberyCreationForm &form);
+std::ostream &operator<<(std::ostream &out, RobotomyRequestForm &form);

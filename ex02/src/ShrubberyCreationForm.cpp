@@ -6,7 +6,7 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 17:37:38 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/06/27 00:16:01 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/06/27 11:14:39 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,15 @@
 #include <fstream>
 
 ShrubberyCreationForm::ShrubberyCreationForm(void)
-    : AForm("ShrubberyCreationForm", 145, 137), _target("default") {
-  std::cout << *this << std::endl;
+    : AForm("ShrubberyCreationForm", 145, 137) {
+  this->setTarget("default");
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string const target)
-    : AForm("ShrubberyCreationForm", 145, 137), _target(target) {
-  std::cout << *this << std::endl;
-}
+    : AForm("ShrubberyCreationForm", false, 145, 137, target) {}
 
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &src)
-    : AForm("ShrubberyCreationForm", 145, 137), _target(src.getTarget()) {
-  std::cout << *this << std::endl;
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &src) {
+  *this = src;
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm(void) {
@@ -38,6 +35,17 @@ ShrubberyCreationForm::operator=(ShrubberyCreationForm const &rhs) {
   if (this != &rhs)
     *this = ShrubberyCreationForm(rhs.getTarget());
   return (*this);
+}
+
+std::ostream &operator<<(std::ostream &out, ShrubberyCreationForm &form) {
+  out << "Form " << form.getName() << " is ";
+  if (form.getIsSigned())
+    out << "signed";
+  else
+    out << "not signed";
+  out << ". Sign grade: " << form.getSignGrade()
+      << " Exec grade: " << form.getExecGrade() << std::endl;
+  return (out);
 }
 
 bool ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
@@ -64,17 +72,6 @@ void ShrubberyCreationForm::_createTree(void) const {
   } catch (std::ofstream::failure &e) {
     std::cout << "Error: " << e.what() << std::endl;
   }
-}
-
-std::ostream &operator<<(std::ostream &out, ShrubberyCreationForm &form) {
-  out << "Form " << form.getName() << " is ";
-  if (form.getIsSigned())
-    out << "signed";
-  else
-    out << "not signed";
-  out << ". Sign grade: " << form.getSignGrade()
-      << " Exec grade: " << form.getExecGrade() << std::endl;
-  return (out);
 }
 
 std::string const ShrubberyCreationForm::_tree =

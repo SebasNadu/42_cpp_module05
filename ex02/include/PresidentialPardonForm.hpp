@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/26 17:08:22 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/06/27 08:53:02 by sebasnadu        ###   ########.fr       */
+/*   Created: 2024/06/27 09:48:17 by sebasnadu         #+#    #+#             */
+/*   Updated: 2024/06/27 09:53:35 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,19 @@
 
 #include "AForm.hpp"
 
-class ShrubberyCreationForm : public AForm {
+class PresidentialPardonForm : public AForm {
 public:
-  ShrubberyCreationForm(void);
-  ShrubberyCreationForm(std::string const target);
-  ShrubberyCreationForm(ShrubberyCreationForm const &src);
-  ~ShrubberyCreationForm(void);
+  PresidentialPardonForm(void);
+  PresidentialPardonForm(std::string const target);
+  PresidentialPardonForm(PresidentialPardonForm const &src);
+  ~PresidentialPardonForm(void);
 
-  ShrubberyCreationForm &operator=(ShrubberyCreationForm const &rhs);
+  PresidentialPardonForm &operator=(PresidentialPardonForm const &rhs);
 
   bool execute(Bureaucrat const &executor) const;
 
 private:
-  void _createTree(void) const;
-  static std::string const _tree;
+  void _pardon(void) const;
 };
 
-std::ostream &operator<<(std::ostream &out, ShrubberyCreationForm &form);
+std::ostream &operator<<(std::ostream &out, PresidentialPardonForm &form);

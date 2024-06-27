@@ -6,7 +6,7 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 09:01:38 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/06/26 20:33:55 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/06/27 11:40:02 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,9 @@ public:
   AForm(int sign_grade, int exec_grade);
   AForm(std::string const name, int sign_grade, int exec_grade);
   AForm(std::string const name, bool is_signed, int sign_grade, int exec_grade);
-  // Deconstructor
-  ~AForm(void);
+  AForm(std::string const name, bool is_signed, int sign_grade, int exec_grade,
+        std::string target);
+  virtual ~AForm(void);
   // Overload Operators
   AForm &operator=(AForm const &rhs);
 
@@ -38,6 +39,7 @@ public:
   size_t getSignGrade(void) const;
   size_t getExecGrade(void) const;
   std::string getTarget(void) const;
+  void setTarget(std::string target);
 
   void beSigned(Bureaucrat *signer);
   virtual bool execute(Bureaucrat const &executor) const = 0;

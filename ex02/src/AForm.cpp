@@ -6,7 +6,7 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 10:27:23 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/06/26 20:32:16 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/06/27 09:05:31 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,23 @@ AForm::AForm(std::string const name, bool is_signed, int sign_grade,
     std::cout << ". Signed [ ]." << std::endl;
 }
 
+AForm::AForm(std::string const name, bool is_signed, int sign_grade,
+             int exec_grade, std::string const target)
+    : _name(name), _is_signed(is_signed), _sign_grade(sign_grade),
+      _exec_grade(exec_grade), _target(target) {
+  if (this->_sign_grade < 1 || this->_exec_grade < 1)
+    throw AForm::GradeTooHighException();
+  if (this->_sign_grade > 150 || this->_exec_grade > 150)
+    throw AForm::GradeTooLowException();
+  std::cout << "Form " << this->_name
+            << " created. Sign grade: " << this->_sign_grade
+            << " Exec grade: " << this->_exec_grade;
+  if (this->_is_signed)
+    std::cout << ". Signed [x]." << std::endl;
+  else
+    std::cout << ". Signed [ ]." << std::endl;
+}
+
 AForm::~AForm(void) {
   std::cout << "Deconstructor called for Form: " << this->_name << std::endl;
 }
@@ -116,6 +133,8 @@ size_t AForm::getSignGrade(void) const { return (this->_sign_grade); }
 size_t AForm::getExecGrade(void) const { return (this->_exec_grade); }
 
 std::string AForm::getTarget(void) const { return (this->_target); }
+
+void AForm::setTarget(std::string target) { this->_target = target; }
 
 char const *AForm::GradeTooLowException::what(void) const throw() {
   return ("Grade is too low");

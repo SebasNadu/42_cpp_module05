@@ -6,7 +6,7 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 16:06:31 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/06/26 16:43:54 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/06/27 10:55:16 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #define RESET "\033[0m"
 #define RED "\033[31m"
 #define GREEN "\033[32m"
+#define YELLOW "\033[33m"
 
 class AForm;
 
@@ -45,6 +46,7 @@ public:
   void incrementGrade(void);
   void decrementGrade(void);
   void signForm(AForm &form);
+  void executeForm(AForm const &form);
 
   class GradeTooHighException : public std::exception {
   public:

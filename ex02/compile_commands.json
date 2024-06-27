@@ -70,5 +70,77 @@
     "directory": "/Users/sebasnadu/code/SebasNadu/42_cpp_module05/ex02",
     "file": "/Users/sebasnadu/code/SebasNadu/42_cpp_module05/ex02/src/AForm.cpp",
     "output": "/Users/sebasnadu/code/SebasNadu/42_cpp_module05/ex02/obj/AForm.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-std=c++98",
+      "-I",
+      "include",
+      "-c",
+      "-I",
+      "/opt/homebrew/include",
+      "-I",
+      "/opt/homebrew/include",
+      "-I",
+      ".",
+      "-o",
+      "obj/ShrubberyCreationForm.o",
+      "src/ShrubberyCreationForm.cpp"
+    ],
+    "directory": "/Users/sebasnadu/code/SebasNadu/42_cpp_module05/ex02",
+    "file": "/Users/sebasnadu/code/SebasNadu/42_cpp_module05/ex02/src/ShrubberyCreationForm.cpp",
+    "output": "/Users/sebasnadu/code/SebasNadu/42_cpp_module05/ex02/obj/ShrubberyCreationForm.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-std=c++98",
+      "-I",
+      "include",
+      "-c",
+      "-I",
+      "/opt/homebrew/include",
+      "-I",
+      "/opt/homebrew/include",
+      "-I",
+      ".",
+      "-o",
+      "obj/RobotomyRequestForm.o",
+      "src/RobotomyRequestForm.cpp"
+    ],
+    "directory": "/Users/sebasnadu/code/SebasNadu/42_cpp_module05/ex02",
+    "file": "/Users/sebasnadu/code/SebasNadu/42_cpp_module05/ex02/src/RobotomyRequestForm.cpp",
+    "output": "/Users/sebasnadu/code/SebasNadu/42_cpp_module05/ex02/obj/RobotomyRequestForm.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-std=c++98",
+      "-I",
+      "include",
+      "-c",
+      "-I",
+      "/opt/homebrew/include",
+      "-I",
+      "/opt/homebrew/include",
+      "-I",
+      ".",
+      "-o",
+      "obj/PresidentialPardonForm.o",
+      "src/PresidentialPardonForm.cpp"
+    ],
+    "directory": "/Users/sebasnadu/code/SebasNadu/42_cpp_module05/ex02",
+    "file": "/Users/sebasnadu/code/SebasNadu/42_cpp_module05/ex02/src/PresidentialPardonForm.cpp",
+    "output": "/Users/sebasnadu/code/SebasNadu/42_cpp_module05/ex02/obj/PresidentialPardonForm.o"
   }
 ]
