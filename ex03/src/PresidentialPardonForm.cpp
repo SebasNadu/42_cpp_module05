@@ -6,20 +6,25 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 09:49:59 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/06/27 11:15:14 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/06/28 07:41:22 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm(void)
-    : AForm("PresidentialPardonForm", false, 25, 5, "default") {}
+    : AForm("PresidentialPardonForm", false, 25, 5, "default") {
+  std::cout << "PresidentialPardonForm default constructor called" << std::endl;
+}
 
 PresidentialPardonForm::PresidentialPardonForm(std::string const target)
-    : AForm("PresidentialPardonForm", false, 25, 5, target) {}
+    : AForm("PresidentialPardonForm", false, 25, 5, target) {
+  std::cout << "PresidentialPardonForm constructor called" << std::endl;
+}
 
 PresidentialPardonForm::PresidentialPardonForm(
     PresidentialPardonForm const &src) {
+  std::cout << "PresidentialPardonForm copy constructor called" << std::endl;
   *this = src;
 }
 
@@ -31,7 +36,7 @@ PresidentialPardonForm &
 PresidentialPardonForm::operator=(PresidentialPardonForm const &rhs) {
   std::cout << "PresidentialPardonForm assignment operator called" << std::endl;
   if (this != &rhs) {
-    *this = PresidentialPardonForm(rhs.getTarget());
+    this->setTarget(rhs.getTarget());
   }
   return (*this);
 }

@@ -6,7 +6,7 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 21:11:23 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/06/26 16:37:29 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/06/28 09:33:51 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,10 +95,11 @@ int main(void) {
       std::cout << *b;
       b->incrementGrade();
       std::cout << *b;
-      Bureaucrat c = *b;
+      Bureaucrat c;
+      c = *b;
+      std::cout << c;
       delete a;
       delete b;
-      std::cout << c;
     } catch (std::exception &e) {
       std::cout << RED << "Bureaucrat test failed: " << e.what() << RESET
                 << std::endl;

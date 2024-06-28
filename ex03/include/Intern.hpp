@@ -6,7 +6,7 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 13:24:48 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/06/27 16:44:15 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/06/28 08:54:45 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,10 @@ public:
   };
 
 private:
-  static size_t const _nForms = 3;
-  static std::string const _forms[_nForms];
+  typedef struct sForms {
+    std::string const &formName;
+    AForm *(*new_fn)(std::string const &);
+  } tForms;
+  static int const _nForms = 3;
+  static tForms const _forms[_nForms];
 };

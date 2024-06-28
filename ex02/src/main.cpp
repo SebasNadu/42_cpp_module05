@@ -6,7 +6,7 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 21:11:23 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/06/27 17:24:29 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/06/28 09:29:05 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,8 @@ int main(void) {
   juan.executeForm(form2);
   tic_tac(100000, 5);
   juan.executeForm(form3);
+  tic_tac(100000, 5);
 
+  std::cout << "\n-------------------------------------\n" << std::endl;
   return (0);
 }

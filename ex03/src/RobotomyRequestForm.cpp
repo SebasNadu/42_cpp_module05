@@ -6,21 +6,29 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 08:59:06 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/06/27 11:28:06 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/06/28 09:18:23 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
-
-size_t RobotomyRequestForm::_count = 0;
+#include <cstdlib>
+#include <ctime>
 
 RobotomyRequestForm::RobotomyRequestForm(void)
-    : AForm("RobotomyRequestForm", false, 72, 45, "default") {}
+    : AForm("RobotomyRequestForm", false, 72, 45, "default") {
+  std::srand(std::time(0));
+  std::cout << "RobotomyRequestForm default constructor called" << std::endl;
+}
 
 RobotomyRequestForm::RobotomyRequestForm(std::string const target)
-    : AForm("RobotomyRequestForm", false, 72, 45, target) {}
+    : AForm("RobotomyRequestForm", false, 72, 45, target) {
+  std::srand(std::time(0));
+  std::cout << "RobotomyRequestForm constructor called" << std::endl;
+}
 
 RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &src) {
+  std::srand(std::time(0));
+  std::cout << "RobotomyRequestForm copy constructor called" << std::endl;
   *this = src;
 }
 
@@ -30,10 +38,10 @@ RobotomyRequestForm::~RobotomyRequestForm() {
 
 RobotomyRequestForm &
 RobotomyRequestForm::operator=(RobotomyRequestForm const &rhs) {
+  std::srand(std::time(0));
   std::cout << "RobotomyRequestForm assignment operator called" << std::endl;
   if (this != &rhs) {
-    *this = RobotomyRequestForm(rhs.getTarget());
-    this->_count = rhs.getCount();
+    this->setTarget(rhs.getTarget());
   }
   return (*this);
 }
@@ -49,8 +57,6 @@ std::ostream &operator<<(std::ostream &out, RobotomyRequestForm &form) {
   return (out);
 }
 
-size_t RobotomyRequestForm::getCount(void) const { return (this->_count); }
-
 bool RobotomyRequestForm::execute(Bureaucrat const &executor) const {
   if (AForm::execute(executor)) {
     this->_robotomize();
@@ -61,7 +67,7 @@ bool RobotomyRequestForm::execute(Bureaucrat const &executor) const {
 
 void RobotomyRequestForm::_robotomize(void) const {
   std::cout << "Drilling noises... Drrrrrrrrr...Drrrrrrrr....Drrrrrrrr....\n";
-  if ((RobotomyRequestForm::_count++ & 1) == 0)
+  if ((std::rand() & 1) == 0)
     std::cout << GREEN << this->getTarget()
               << " has been robotomized successfully" << RESET << std::endl;
   else

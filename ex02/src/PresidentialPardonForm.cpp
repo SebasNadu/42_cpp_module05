@@ -6,7 +6,7 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 09:49:59 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/06/27 11:15:14 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/06/27 19:48:34 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ PresidentialPardonForm &
 PresidentialPardonForm::operator=(PresidentialPardonForm const &rhs) {
   std::cout << "PresidentialPardonForm assignment operator called" << std::endl;
   if (this != &rhs) {
-    *this = PresidentialPardonForm(rhs.getTarget());
+    this->setTarget(rhs.getTarget());
   }
   return (*this);
 }

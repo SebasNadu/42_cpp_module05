@@ -6,7 +6,7 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 17:37:38 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/06/27 11:14:39 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/06/27 19:49:26 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ ShrubberyCreationForm &
 ShrubberyCreationForm::operator=(ShrubberyCreationForm const &rhs) {
   std::cout << "ShrubberyCreationForm assignment operator called" << std::endl;
   if (this != &rhs)
-    *this = ShrubberyCreationForm(rhs.getTarget());
+    this->setTarget(rhs.getTarget());
   return (*this);
 }
 

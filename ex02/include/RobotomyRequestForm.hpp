@@ -6,7 +6,7 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 08:55:51 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/06/27 09:31:40 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/06/28 09:24:38 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,10 @@ public:
 
   RobotomyRequestForm &operator=(RobotomyRequestForm const &rhs);
 
-  size_t getCount(void) const;
-
   bool execute(Bureaucrat const &executor) const;
 
 private:
   void _robotomize(void) const;
-  static size_t _count;
 };
 
 std::ostream &operator<<(std::ostream &out, RobotomyRequestForm &form);

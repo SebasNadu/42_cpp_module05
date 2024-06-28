@@ -6,7 +6,7 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 10:27:23 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/06/26 15:13:06 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/06/27 19:42:42 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,8 +90,7 @@ Form::~Form(void) {
 Form &Form::operator=(Form const &rhs) {
   std::cout << "Form assignment operator called" << std::endl;
   if (this != &rhs)
-    *this = Form(rhs.getName() + "_copy", rhs.getIsSigned(), rhs.getSignGrade(),
-                 rhs.getExecGrade());
+    this->_is_signed = rhs.getIsSigned();
   return (*this);
 }
 

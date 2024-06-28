@@ -6,7 +6,7 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 21:18:04 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/06/27 17:33:52 by johnavar         ###   ########.fr       */
+/*   Updated: 2024/06/28 09:01:02 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ Bureaucrat::~Bureaucrat(void) {
 Bureaucrat &Bureaucrat::operator=(Bureaucrat const &rhs) {
   std::cout << "Bureaucrat assignment operator called" << std::endl;
   if (this != &rhs)
-    *this = Bureaucrat(rhs.getName() + "_copy", rhs.getGrade());
+    this->_grade = rhs.getGrade();
   return (*this);
 }
 
@@ -80,7 +80,7 @@ void Bureaucrat::incrementGrade(void) {
     std::cout << GREEN << "Bureaucrat " << this->_name
               << " grade incremented to " << this->_grade << RESET << std::endl;
   } catch (std::exception &e) {
-    std::cout << RED << "Bureaucrat " << this->_name
+    std::cerr << RED << "Bureaucrat " << this->_name
               << " couldn't increment grade because: " << e.what() << RESET
               << std::endl;
   }

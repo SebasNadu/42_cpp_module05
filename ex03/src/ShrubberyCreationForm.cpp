@@ -6,7 +6,7 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 17:37:38 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/06/27 11:14:39 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/06/28 07:45:31 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,17 @@
 #include <fstream>
 
 ShrubberyCreationForm::ShrubberyCreationForm(void)
-    : AForm("ShrubberyCreationForm", 145, 137) {
-  this->setTarget("default");
+    : AForm("ShrubberyCreationForm", false, 145, 137, "default") {
+  std::cout << "ShrubberyCreationForm default constructor called" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string const target)
-    : AForm("ShrubberyCreationForm", false, 145, 137, target) {}
+    : AForm("ShrubberyCreationForm", false, 145, 137, target) {
+  std::cout << "ShrubberyCreationForm constructor called" << std::endl;
+}
 
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &src) {
+  std::cout << "ShrubberyCreationForm copy constructor called" << std::endl;
   *this = src;
 }
 
@@ -33,7 +36,7 @@ ShrubberyCreationForm &
 ShrubberyCreationForm::operator=(ShrubberyCreationForm const &rhs) {
   std::cout << "ShrubberyCreationForm assignment operator called" << std::endl;
   if (this != &rhs)
-    *this = ShrubberyCreationForm(rhs.getTarget());
+    this->setTarget(rhs.getTarget());
   return (*this);
 }
 
