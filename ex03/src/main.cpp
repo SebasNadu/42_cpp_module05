@@ -6,7 +6,7 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 21:11:23 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/06/28 09:28:14 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/06/28 15:29:30 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int main(void) {
     delete formShrubbery;
     delete inexitentForm;
   } catch (std::exception &e) {
-    std::cout << RED << e.what() << RESET << std::endl;
+    std::cerr << RED << e.what() << RESET << std::endl;
   }
   return (0);
 }
