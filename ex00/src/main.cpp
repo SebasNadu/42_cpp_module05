@@ -6,7 +6,7 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 21:11:23 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/06/28 09:33:51 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/06/28 16:21:49 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main(void) {
     a = NULL;
     try {
       a = new Bureaucrat(0);
-    } catch (std::exception &e) {
+    } catch (std::exception const &e) {
       std::cout << RED << "Constructor default failed: " << e.what() << RESET
                 << std::endl;
     }
@@ -33,7 +33,7 @@ int main(void) {
     a = NULL;
     try {
       a = new Bureaucrat(151);
-    } catch (std::exception &e) {
+    } catch (std::exception const &e) {
       std::cout << RED << "Constructor default failed: " << e.what() << RESET
                 << std::endl;
     }
@@ -43,7 +43,7 @@ int main(void) {
     try {
       a = new Bureaucrat("JuanTheBad", 50);
       a->setGrade(0);
-    } catch (std::exception &e) {
+    } catch (std::exception const &e) {
       std::cout << RED << "setGrade failed: " << e.what() << RESET << std::endl;
     }
     if (a)
@@ -52,7 +52,7 @@ int main(void) {
     try {
       a = new Bureaucrat("JuanTheBad", 50);
       a->setGrade(151);
-    } catch (std::exception &e) {
+    } catch (std::exception const &e) {
       std::cout << RED << "setGrade failed: " << e.what() << RESET << std::endl;
     }
     if (a)
@@ -62,7 +62,7 @@ int main(void) {
       a = new Bureaucrat("JuanTheBad", 1);
       std::cout << *a;
       a->incrementGrade();
-    } catch (std::exception &e) {
+    } catch (std::exception const &e) {
       std::cout << RED << "incrementGrade failed: " << e.what() << RESET
                 << std::endl;
     }
@@ -73,7 +73,7 @@ int main(void) {
       a = new Bureaucrat("JuanTheBad", 150);
       std::cout << *a;
       a->decrementGrade();
-    } catch (std::exception &e) {
+    } catch (std::exception const &e) {
       std::cout << RED << "decrementGrade failed: " << e.what() << RESET
                 << std::endl;
     }
@@ -100,7 +100,7 @@ int main(void) {
       std::cout << c;
       delete a;
       delete b;
-    } catch (std::exception &e) {
+    } catch (std::exception const &e) {
       std::cout << RED << "Bureaucrat test failed: " << e.what() << RESET
                 << std::endl;
     }

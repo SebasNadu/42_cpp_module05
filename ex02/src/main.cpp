@@ -6,7 +6,7 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 21:11:23 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/06/28 15:29:23 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/06/28 16:24:03 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ int main(void) {
     tic_tac(100000, 5);
 
     std::cout << "\n-------------------------------------\n" << std::endl;
-  } catch (std::exception &e) {
+  } catch (std::exception const &e) {
     std::cerr << RED << e.what() << RESET << std::endl;
   }
   return (0);
